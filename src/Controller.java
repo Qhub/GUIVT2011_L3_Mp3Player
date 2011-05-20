@@ -12,7 +12,7 @@ public class Controller implements ActionListener
 	
 	public Controller(Model _theM) 
 	{
-		this.theM = _theM;
+		theM = _theM;
 		chooseFile = new JFileChooser();
 	}
 
@@ -40,17 +40,11 @@ public class Controller implements ActionListener
 		{
 			theM.stop();
 		}
-		else
-		{
-			System.out.println("Error in the controller");
-		}
-		
 	}
 	
 	public String getSongtitle()
 	{
-		String songTitle = file.getName();
-		return songTitle;
+		return file.getName();
 	}
 
 }

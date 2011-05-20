@@ -18,8 +18,8 @@ public class View extends JPanel implements Observer
 	{
 		super(new BorderLayout());
 		
-		this.theC = _theC;
-		this.theM = _theM;
+		theC = _theC;
+		theM = _theM;
 		
 		//Frame
 		theFrame = new JFrame("The awesomest player of them all!");
@@ -54,7 +54,7 @@ public class View extends JPanel implements Observer
 		//Label to show runtime
 		runtime = new JLabel();
 		runtime.setForeground(Color.WHITE);
-		runtime.setPreferredSize(new Dimension(60, 30));
+		runtime.setPreferredSize(new Dimension(120, 30));
 		songPanel.add(runtime);
 		
 		theM.addObserver(this);
@@ -63,7 +63,7 @@ public class View extends JPanel implements Observer
 	@Override
 	public void update(Observable o, Object arg) 
 	{
-		runtime.setText(theM.getPosition());
+		runtime.setText("Run time: " + theM.getPosition());
 		theFrame.setTitle(theC.getSongtitle());
 	}
 
